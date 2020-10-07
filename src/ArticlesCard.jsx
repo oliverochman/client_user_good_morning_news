@@ -1,18 +1,18 @@
 import React from "react";
 import { Card, Image } from "semantic-ui-react";
 
- const ArticlesCard = () => {
+ const ArticlesCard = ({ article }) => {
   return (
     <>
       <Card>
-        <Image src="/images/avatar/large/matthew.png" wrapped ui={false} />
+        <Image src={article.image} wrapped ui={false} data-cy="img"/>
         <Card.Content>
-          <Card.Header>Matthew</Card.Header>
+          <Card.Header data-cy="title">{article.title}</Card.Header>
           <Card.Meta>
-            <span className="date">Joined in 2015</span>
+            <span className="date" date-cy="date">{article.date}</span>
           </Card.Meta>
-          <Card.Description>
-            Matthew is a musician living in Nashville.
+          <Card.Description data-cy="teaser">
+           {article.teaser}
           </Card.Description>
         </Card.Content>
       </Card>

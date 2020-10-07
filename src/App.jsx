@@ -1,11 +1,10 @@
 import React from "react";
-
+import ArticlesList from './ArticlesList';
 const App = () => {
-  return <>
-  
-  
-  
-  
-  </>;
+  return (
+    <>
+      <ArticlesList />
+    </>
+  );
 };
 export default App;

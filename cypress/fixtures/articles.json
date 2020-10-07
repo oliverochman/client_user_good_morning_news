@@ -4,19 +4,22 @@
       "id": 1,
       "title": "Hello World",
       "teaser": "Sun is always shining in Kista",
-      "image": "https://st.depositphotos.com/2196544/4742/v/450/depositphotos_47423161-stock-illustration-happy-cartoon-yellow-sun-character.jpg"
+      "image": "https://st.depositphotos.com/2196544/4742/v/450/depositphotos_47423161-stock-illustration-happy-cartoon-yellow-sun-character.jpg",
+      "date": "2020-10-07"
     },
     {
       "id": 2,
       "title": "Hello Africa",
       "teaser": "Sun is always shining in Kista",
-      "image": "https://st.depositphotos.com/2196544/4742/v/450/depositphotos_47423161-stock-illustration-happy-cartoon-yellow-sun-character.jpg"
+      "image": "https://st.depositphotos.com/2196544/4742/v/450/depositphotos_47423161-stock-illustration-happy-cartoon-yellow-sun-character.jpg",
+      "date": "2020-10-07"
     },
     {
       "id": 3,
       "title": "Hello Kista",
       "teaser": "Sun is always shining in Kista",
-      "image": "https://st.depositphotos.com/2196544/4742/v/450/depositphotos_47423161-stock-illustration-happy-cartoon-yellow-sun-character.jpg"
+      "image": "https://st.depositphotos.com/2196544/4742/v/450/depositphotos_47423161-stock-illustration-happy-cartoon-yellow-sun-character.jpg",
+      "date": "2020-10-07"
     }
   ]
 }

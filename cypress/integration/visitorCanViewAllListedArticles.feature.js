@@ -9,11 +9,13 @@ describe("visitor can see all listed articles", () => {
 
     cy.visit("/");
   });
+
   it("visitor can see article title", () => {
     cy.get("[data-cy='article-1']").within(() => {
       cy.get("[data-cy='title']").should("contain", "Hello World");
     });
   });
+
   it("visitor can see article teaser", () => {
     cy.get("[data-cy='article-2']").within(() => {
       cy.get("[data-cy='teaser']").should(
@@ -22,9 +24,16 @@ describe("visitor can see all listed articles", () => {
       );
     });
   });
+
   it("visitor can see article image", () => {
     cy.get("[data-cy='article-3']").within(() => {
       cy.get("[data-cy='img']").should("be.visible");
+    });
+  });
+
+  it("visitor can see article date", () => {
+    cy.get("[data-cy='article-3']").within(() => {
+      cy.get("[data-cy='date']").should("contain", "2020-10-07");
     });
   });
 });
