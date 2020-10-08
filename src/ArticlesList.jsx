@@ -1,6 +1,7 @@
 import ArticlesCard from "./ArticlesCard";
 import React, { Component } from "react";
 import { fetchAllArticles } from "./modules/articles";
+import { Grid } from "semantic-ui-react";
 
 class ArticlesList extends Component {
   state = {
@@ -21,7 +22,11 @@ class ArticlesList extends Component {
       );
     });
 
-    return <>{articleList}</>;
+    return (
+      <Grid>
+        <Grid.Row columns={3}>{articleList}</Grid.Row>
+      </Grid>
+    );
   }
 }
 export default ArticlesList;

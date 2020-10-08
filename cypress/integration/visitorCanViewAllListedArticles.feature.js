@@ -25,12 +25,6 @@ describe("visitor can see all listed articles", () => {
     });
   });
 
-  it("visitor can see article image", () => {
-    cy.get("[data-cy='article-3']").within(() => {
-      cy.get("[data-cy='img']").should("be.visible");
-    });
-  });
-
   it("visitor can see article date", () => {
     cy.get("[data-cy='article-3']").within(() => {
       cy.get("[data-cy='date']").should("contain", "2020-10-07");
