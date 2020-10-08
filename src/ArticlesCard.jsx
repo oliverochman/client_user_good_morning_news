@@ -6,7 +6,6 @@ const ArticlesCard = ({ article }) => {
     <Card>
       <Card.Content>
         <Card.Header data-cy="title">{article.title}</Card.Header>
-        <Card.Meta data-cy="date">{article.date}</Card.Meta>
         <Card.Description data-cy="teaser">{article.teaser}</Card.Description>
       </Card.Content>
     </Card>
