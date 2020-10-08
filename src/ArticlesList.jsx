@@ -1,32 +1,28 @@
 import ArticlesCard from "./ArticlesCard";
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { fetchAllArticles } from "./modules/articles";
 import { Grid } from "semantic-ui-react";
 
-class ArticlesList extends Component {
-  state = {
-    articles: [],
-  };
+const ArticlesList = () => {
+  const [articles, setArticles] = useState([]);
 
-  componentDidMount = async () => {
-    let articles = await fetchAllArticles();
-    this.setState({ articles: articles });
-  };
+  useEffect(async () => {
+    let response = await fetchAllArticles();
+    setArticles(response);
+  }, []);
 
-  render() {
-    let articleList = this.state.articles.map((article) => {
-      return (
-        <div data-cy={"article-" + article.id} key={article.id}>
-          <ArticlesCard article={article} />
-        </div>
-      );
-    });
-
+  let articleList = articles.map((article) => {
     return (
-      <Grid>
-        <Grid.Row columns={3}>{articleList}</Grid.Row>
-      </Grid>
+      <div data-cy={"article-" + article.id} key={article.id}>
+        <ArticlesCard article={article} />
+      </div>
     );
-  }
-}
+  });
+
+  return (
+    <Grid>
+      <Grid.Row columns={3}>{articleList}</Grid.Row>
+    </Grid>
+  );
+};
 export default ArticlesList;
