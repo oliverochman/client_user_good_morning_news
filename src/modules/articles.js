@@ -4,4 +4,4 @@ const fetchAllArticles = async () => {
   let articles = await axios.get("/articles");
   return articles.data.articles;
 };
-export default { fetchAllArticles };
+export  { fetchAllArticles }

@@ -1,6 +1,6 @@
 import ArticlesCard from "./ArticlesCard";
 import React, { Component } from "react";
-import fetchAllArticles from "./modules/articles";
+import { fetchAllArticles } from "./modules/articles";
 
 class ArticlesList extends Component {
   state = {
@@ -8,8 +8,8 @@ class ArticlesList extends Component {
   };
 
   componentDidMount = async () => {
-    let newarticles = await fetchAllArticles();
-    this.setState({ articles: newarticles });
+    let articles = await fetchAllArticles();
+    this.setState({ articles: articles });
   };
 
   render() {
