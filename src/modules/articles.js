@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const fetchAllArticles = async () => {
-  let articles = await axios.get("/articles");
-  return articles.data.articles;
+  let response = await axios.get("/articles");
+  return response.data.articles;
 };
-export  { fetchAllArticles }
+export { fetchAllArticles };

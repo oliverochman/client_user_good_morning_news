@@ -6,22 +6,25 @@ import { Grid } from "semantic-ui-react";
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
 
-  useEffect(async () => {
-    let response = await fetchAllArticles();
-    setArticles(response);
+  useEffect(() => {
+    const getArticles = async () => {
+      const response = await fetchAllArticles();
+      setArticles(response);
+    };
+    getArticles();
   }, []);
-
-  let articleList = articles.map((article) => {
-    return (
-      <div data-cy={"article-" + article.id} key={article.id}>
-        <ArticlesCard article={article} />
-      </div>
-    );
-  });
 
   return (
     <Grid>
-      <Grid.Row columns={3}>{articleList}</Grid.Row>
+      <Grid.Row columns={3}>
+        {articles.map((article) => {
+          return (
+            <div data-cy={"article-" + article.id} key={article.id}>
+              <ArticlesCard article={article} />
+            </div>
+          );
+        })}
+      </Grid.Row>
     </Grid>
   );
 };
