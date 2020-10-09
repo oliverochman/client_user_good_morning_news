@@ -4,7 +4,7 @@ describe("visitor can see all listed articles", () => {
     cy.route({
       method: "GET",
       url: "http://localhost:3000/api/v1/articles",
-      response: "fixture:articles.json",
+      response: "fixture:articles_index.json",
     });
 
     cy.visit("/");
