@@ -1,4 +1,4 @@
-describe("visitor can see a specific article", () => {
+describe("visitor can read a specific article", () => {
   beforeEach(() => {
     cy.server();
     cy.route({
@@ -13,6 +13,7 @@ describe("visitor can see a specific article", () => {
   it("visitor can see a specific article's title", () => {
     cy.get("[data-cy='article-1']").within(() => {
       cy.get("[data-cy='title']").should("contain", "Hello World");
+      cy.get()
     });
   });
 
@@ -25,7 +26,7 @@ describe("visitor can see a specific article", () => {
     });
   });
 
-  it("visitor can see a specific article's content", () => {
+  it("should display a specific article's content", () => {
     cy.get("[data-cy='article-3']").within(() => {
       cy.get("[data-cy='content']").should(
         "contain",
