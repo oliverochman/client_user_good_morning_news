@@ -1,6 +1,6 @@
 import ArticlesCard from "./ArticlesCard";
 import React, { useState, useEffect } from "react";
-import { fetchAllArticles } from "./modules/articles";
+import Articles from "../modules/articles";
 import { Grid } from "semantic-ui-react";
 
 const ArticlesList = () => {
@@ -8,7 +8,7 @@ const ArticlesList = () => {
 
   useEffect(() => {
     const getArticles = async () => {
-      const response = await fetchAllArticles();
+      const response = await Articles.index();
       setArticles(response);
     };
     getArticles();
