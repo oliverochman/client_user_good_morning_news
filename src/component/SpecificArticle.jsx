@@ -17,7 +17,7 @@ const SpecificArticle = () => {
   }, [id]);
 
   return (
-    <Container textAlign="center">
+    <Container id="container1" textAlign="center">
       <div data-cy="article">
         <h1 data-cy="title">{article.title}</h1>
         <h3 data-cy="teaser">{article.teaser}</h3>

@@ -5,6 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 import "semantic-ui-css/semantic.min.css";
 import axios from "axios";
 import { BrowserRouter } from "react-router-dom";
+import "./index.css"
 
 let apiUrl;
 if (process.env.NODE_ENV === "production") {
