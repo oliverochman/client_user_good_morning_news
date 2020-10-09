@@ -1,12 +1,11 @@
 import React from "react";
 import ArticlesList from './ArticlesList';
-import SpecificArticle from './SpecificArticle';
+import { Switch, Route } from 'react-router-dom'
 
 const App = () => {
   return (
     <>
       <ArticlesList />
-      <SpecificArticle />
     </>
   );
 };
