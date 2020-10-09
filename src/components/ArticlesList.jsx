@@ -1,6 +1,6 @@
 import ArticlesCard from "./ArticlesCard";
 import React, { useState, useEffect } from "react";
-import { fetchAllArticles } from "./modules/articles";
+import { fetchAllArticles } from "../modules/articles";
 import { Grid } from "semantic-ui-react";
 
 const ArticlesList = () => {
