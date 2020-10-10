@@ -1,0 +1,16 @@
+{
+  "articles": [
+    {
+      "id": 6,
+      "title": "Helgvädret - paraply eller solglasögon?",
+      "teaser": "Lågtrycken styr väderläget i helgen. Under fredagen blir det soligt och blåsigt i söder men under resten av helgen väntas en hel del regn.",
+      "category": "weather"
+    },
+    {
+      "id": 7,
+      "title": "Regnar det mer på hösten?",
+      "teaser": "Förutom färgstarka löv förknippar vi ofta hösten med regn, men stämmer det att hösten har mer nederbörd än övriga månader? ",
+      "category": "weather"
+    }
+  ]
+}

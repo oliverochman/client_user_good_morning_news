@@ -1,0 +1,16 @@
+{
+  "articles": [
+    {
+      "id": 4,
+      "title": "Vännäs HC: 'Inget lag har tränat hårdare än oss'",
+      "teaser": "Blod, svett och…spyor. Alltid-fys är Vännäs HC:s nya filosofi och nu ska de visa att det tuffa upplägget ger resultat på isen också.",
+      "category": "sports"
+    },
+    {
+      "id": 5,
+      "title": "Lönelista 2020: Så tjänar spelarna i SSL",
+      "teaser": "Vi har kartlagt inkomsterna i innebandyns SSL.Hur mycket tjänar spelarna i DITT lag?",
+      "category": "sports"
+    }
+  ]
+}

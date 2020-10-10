@@ -36,6 +36,10 @@ describe("visitor can see all listed articles", () => {
         response: "fixture:sports_index.json",
       });
       cy.visit("/");
+
+      cy.get("[data-cy='navigation-bar']").within(() => {
+        cy.get("[data-cy='sports']").click();
+      });
     });
     it("visitor can see article title", () => {
       cy.get("[data-cy='article-1']").within(() => {
@@ -62,6 +66,10 @@ describe("visitor can see all listed articles", () => {
         response: "fixture:entertainment_index.json",
       });
       cy.visit("/");
+
+      cy.get("[data-cy='navigation-bar']").within(() => {
+        cy.get("[data-cy='entertainment']").click();
+      });
     });
     it("visitor can see article title", () => {
       cy.get("[data-cy='article-1']").within(() => {
@@ -88,6 +96,9 @@ describe("visitor can see all listed articles", () => {
         response: "fixture:weather_index.json",
       });
       cy.visit("/");
+      cy.get("[data-cy='navigation-bar']").within(() => {
+        cy.get("[data-cy='weather']").click();
+      });
     });
     it("visitor can see article title", () => {
       cy.get("[data-cy='article-1']").within(() => {
@@ -114,6 +125,9 @@ describe("visitor can see all listed articles", () => {
         response: "fixture:business_index.json",
       });
       cy.visit("/");
+      cy.get("[data-cy='navigation-bar']").within(() => {
+        cy.get("[data-cy='business']").click();
+      });
     });
     it("visitor can see article title", () => {
       cy.get("[data-cy='article-1']").within(() => {

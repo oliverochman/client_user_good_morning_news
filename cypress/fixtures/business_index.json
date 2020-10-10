@@ -1,0 +1,16 @@
+{
+  "articles": [
+    {
+      "id": 8,
+      "title": "Stockholm ger Kry extra betalt för digitala besök",
+      "teaser": "Kry får 50 procent mer i ersättning av Region Stockholm för alla digitala besök i regionen.",
+      "category": "business"
+    },
+    {
+      "id": 9,
+      "title": "Krys succéaffär – att hitta kryphål i systemen",
+      "teaser": "Politikerna har försökt täppa till hålen – ändå är den kritiserade vårdappen en framgångssaga.",
+      "category": "business"
+    }
+  ]
+}
