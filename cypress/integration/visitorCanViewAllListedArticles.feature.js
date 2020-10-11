@@ -1,8 +1,4 @@
 describe("visitor can see all listed articles", () => {
-  
-  
-  
-  
   context("when visiting starting page", () => {
     beforeEach(() => {
       cy.server();
@@ -47,7 +43,10 @@ describe("visitor can see all listed articles", () => {
     });
     it("visitor can see article title", () => {
       cy.get("[data-cy='article-4']").within(() => {
-        cy.get("[data-cy='title']").should("contain", "Vännäs HC: 'Inget lag har tränat hårdare än oss'");
+        cy.get("[data-cy='title']").should(
+          "contain",
+          "Vännäs HC: 'Inget lag har tränat hårdare än oss'"
+        );
       });
     });
 
@@ -77,7 +76,10 @@ describe("visitor can see all listed articles", () => {
     });
     it("visitor can see article title", () => {
       cy.get("[data-cy='article-10']").within(() => {
-        cy.get("[data-cy='title']").should("contain", "Tudelad konstnär gjuter nytt liv i gammal illusion");
+        cy.get("[data-cy='title']").should(
+          "contain",
+          "Tudelad konstnär gjuter nytt liv i gammal illusion"
+        );
       });
     });
 
@@ -106,7 +108,10 @@ describe("visitor can see all listed articles", () => {
     });
     it("visitor can see article title", () => {
       cy.get("[data-cy='article-6']").within(() => {
-        cy.get("[data-cy='title']").should("contain", "Helgvädret - paraply eller solglasögon?");
+        cy.get("[data-cy='title']").should(
+          "contain",
+          "Helgvädret - paraply eller solglasögon?"
+        );
       });
     });
 
@@ -135,7 +140,10 @@ describe("visitor can see all listed articles", () => {
     });
     it("visitor can see article title", () => {
       cy.get("[data-cy='article-8']").within(() => {
-        cy.get("[data-cy='title']").should("contain", "Stockholm ger Kry extra betalt för digitala besök");
+        cy.get("[data-cy='title']").should(
+          "contain",
+          "Stockholm ger Kry extra betalt för digitala besök"
+        );
       });
     });
 
