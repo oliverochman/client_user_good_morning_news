@@ -1,3 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap");
+
 #container1 {
   background: linear-gradient(to bottom, #ffffff 0%, #d3d3d3 100%);
+}
+#good,
+#morning,
+#news {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #e6ecff;
+}
+#good {
+  background-color: #00134d;
+  padding-left: 1em;
+}
+#morning {
+  background-color: #001a66;
+}
+#news {
+  background-color: #002080;
+}
+#main-grid {
+  background-color: #002699;
+  height: 5em;
+}
+#slogan{
+  margin-top: 1em;
+  color: #e6ecff;
 }

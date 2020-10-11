@@ -6,7 +6,7 @@ import NavigationBar from '../component/NavigationBar';
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
-
+ 
   useEffect(() => {
     const getArticles = async () => {
       const response = await Articles.index();

@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Header, Menu } from 'semantic-ui-react'
+import React, { useState } from "react";
+import { Header, Menu, Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
@@ -8,63 +8,70 @@ const NavigationBar = () => {
     setActiveItem(name);
   };
   return (
-    <Header as='h2'>
-      Good Morning News - For a great start of the day
+    <Header as="h1" id="header">
+      <Grid id="main-grid">
+        <Grid.Row columns={4} id="GMN-logo">
+          <Grid.Column id="good" width={2} textAlign="right">Good</Grid.Column>
+          <Grid.Column id="morning" width={2} textAlign="center">Morning</Grid.Column>
+          <Grid.Column id="news" width={2} textAlign="left">News</Grid.Column>
+          <Grid.Column id="slogan" width={8} textAlign="right">For a great start of the day</Grid.Column>
+        </Grid.Row>{" "} 
+      </Grid>
       <Header.Subheader data-cy="navigation-bar">
         <Menu>
           <Menu.Item
             data-cy="news"
-            name='news'
-            active={activeItem === 'news'}
+            name="news"
+            active={activeItem === "news"}
             onClick={handleItemClick}
             as={Link}
-            to={`/articles/`}
+            to={{ pathname: "/articles/" }}
           >
             News
-        </Menu.Item>
+          </Menu.Item>
           <Menu.Item
             data-cy="sports"
-            name='sports'
-            active={activeItem === 'sports'}
+            name="sports"
+            active={activeItem === "sports"}
             onClick={handleItemClick}
             as={Link}
-            to={`/articles/sports`}
+            to={{ pathname: "/articles/sports" }}
           >
             Sports
-        </Menu.Item>
+          </Menu.Item>
           <Menu.Item
             data-cy="business"
-            name='business'
-            active={activeItem === 'business'}
+            name="business"
+            active={activeItem === "business"}
             onClick={handleItemClick}
             as={Link}
-            to={`/articles/business`}
+            to={{ pathname: "/articles/business" }}
           >
             Business
-        </Menu.Item>
+          </Menu.Item>
           <Menu.Item
             data-cy="entertainment"
-            name='entertainment'
-            active={activeItem === 'entertainment'}
+            name="entertainment"
+            active={activeItem === "entertainment"}
             onClick={handleItemClick}
             as={Link}
-            to={`/articles/entertainment`}
+            to={{ pathname: "/articles/entertainment" }}
           >
             Entertainment
-        </Menu.Item>
+          </Menu.Item>
           <Menu.Item
             data-cy="weather"
-            name='weather'
-            active={activeItem === 'weather'}
+            name="weather"
+            active={activeItem === "weather"}
             onClick={handleItemClick}
             as={Link}
-            to={`/articles/weather`}
+            to={{ pathname: "/articles/weather" }}
           >
             Weather
-        </Menu.Item>
+          </Menu.Item>
         </Menu>
       </Header.Subheader>
     </Header>
-  )
-}
-export default NavigationBar
+  );
+};
+export default NavigationBar;
