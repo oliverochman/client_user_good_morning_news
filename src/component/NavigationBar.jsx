@@ -11,14 +11,22 @@ const NavigationBar = () => {
     <Header as="h1" id="header">
       <Grid id="main-grid">
         <Grid.Row columns={4} id="GMN-logo">
-          <Grid.Column id="good" width={2} textAlign="right">Good</Grid.Column>
-          <Grid.Column id="morning" width={2} textAlign="center">Morning</Grid.Column>
-          <Grid.Column id="news" width={2} textAlign="left">News</Grid.Column>
-          <Grid.Column id="slogan" width={8} textAlign="right">For a great start of the day</Grid.Column>
-        </Grid.Row>{" "} 
+          <Grid.Column id="good" width={2} textAlign="right">
+            Good
+          </Grid.Column>
+          <Grid.Column id="morning" width={2} textAlign="center">
+            Morning
+          </Grid.Column>
+          <Grid.Column id="News" width={2} textAlign="left">
+            News
+          </Grid.Column>
+          <Grid.Column id="slogan" width={8} textAlign="right">
+            For a great start of the day
+          </Grid.Column>
+        </Grid.Row>{" "}
       </Grid>
       <Header.Subheader data-cy="navigation-bar">
-        <Menu>
+        <Menu id="menu">
           <Menu.Item
             data-cy="news"
             name="news"

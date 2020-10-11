@@ -5,10 +5,10 @@ import SpecificArticle from "./component/SpecificArticle";
 
 const App = () => {
   return (
-    <Switch>  
+    <Switch>
       <Route exact path="/articles/:category/:id" component={SpecificArticle} />
       <Route exact path="/articles/:category/" component={ArticlesList} />
-     { <Route path="*" render={() => <Redirect to="/articles/news"/>} />}
+      <Route path="/" render={() => <Redirect to="/articles/news" />} />
     </Switch>
   );
 };
