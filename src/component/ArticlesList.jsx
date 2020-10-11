@@ -2,6 +2,7 @@ import ArticlesCard from "./ArticlesCard";
 import React, { useState, useEffect } from "react";
 import Articles from "../modules/articles";
 import { Grid } from "semantic-ui-react";
+import NavigationBar from '../component/NavigationBar';
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
@@ -15,6 +16,8 @@ const ArticlesList = () => {
   }, []);
 
   return (
+    <>
+    <NavigationBar />
     <Grid>
       <Grid.Row columns={3}>
         {articles.map((article) => {
@@ -26,6 +29,7 @@ const ArticlesList = () => {
         })}
       </Grid.Row>
     </Grid>
+    </>
   );
 };
 export default ArticlesList;
