@@ -25,7 +25,7 @@ const NavigationBar = () => {
             active={activeItem === "news"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/articles/" }}
+            to={{ pathname: "/articles" }}
           >
             News
           </Menu.Item>

@@ -1,11 +1,15 @@
 describe("visitor can see all listed articles", () => {
+  
+  
+  
+  
   context("when visiting starting page", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
         method: "GET",
-        url: "http://localhost:3000/api/v1/articles",
-        response: "fixture:articles_index.json",
+        url: "http://localhost:3000/api/v1/articles/news",
+        response: "fixture:news_index.json",
       });
 
       cy.visit("/");
@@ -42,16 +46,16 @@ describe("visitor can see all listed articles", () => {
       });
     });
     it("visitor can see article title", () => {
-      cy.get("[data-cy='article-1']").within(() => {
-        cy.get("[data-cy='title']").should("contain", "Hello World");
+      cy.get("[data-cy='article-4']").within(() => {
+        cy.get("[data-cy='title']").should("contain", "Vännäs HC: 'Inget lag har tränat hårdare än oss'");
       });
     });
 
     it("visitor can see article teaser", () => {
-      cy.get("[data-cy='article-2']").within(() => {
+      cy.get("[data-cy='article-5']").within(() => {
         cy.get("[data-cy='teaser']").should(
           "contain",
-          "Sun is always shining in Kista"
+          "Vi har kartlagt inkomsterna i innebandyns SSL.Hur mycket tjänar spelarna i DITT lag?"
         );
       });
     });
@@ -72,16 +76,16 @@ describe("visitor can see all listed articles", () => {
       });
     });
     it("visitor can see article title", () => {
-      cy.get("[data-cy='article-1']").within(() => {
-        cy.get("[data-cy='title']").should("contain", "Hello World");
+      cy.get("[data-cy='article-10']").within(() => {
+        cy.get("[data-cy='title']").should("contain", "Tudelad konstnär gjuter nytt liv i gammal illusion");
       });
     });
 
     it("visitor can see article teaser", () => {
-      cy.get("[data-cy='article-2']").within(() => {
+      cy.get("[data-cy='article-11']").within(() => {
         cy.get("[data-cy='teaser']").should(
           "contain",
-          "Sun is always shining in Kista"
+          "Läsare som öppnar Anne Applebaums nya bok vet redan att det ser mörkt ut för demokratin. Tyvärr lyckas hon inte ge några nya insikter om varför det har blivit så. Håkan Lindgren läser ”Demokratins skymning” och blir besviken. Under strecket"
         );
       });
     });
@@ -101,16 +105,16 @@ describe("visitor can see all listed articles", () => {
       });
     });
     it("visitor can see article title", () => {
-      cy.get("[data-cy='article-1']").within(() => {
-        cy.get("[data-cy='title']").should("contain", "Hello World");
+      cy.get("[data-cy='article-6']").within(() => {
+        cy.get("[data-cy='title']").should("contain", "Helgvädret - paraply eller solglasögon?");
       });
     });
 
     it("visitor can see article teaser", () => {
-      cy.get("[data-cy='article-2']").within(() => {
+      cy.get("[data-cy='article-7']").within(() => {
         cy.get("[data-cy='teaser']").should(
           "contain",
-          "Sun is always shining in Kista"
+          "Förutom färgstarka löv förknippar vi ofta hösten med regn, men stämmer det att hösten har mer nederbörd än övriga månader?"
         );
       });
     });
@@ -130,16 +134,16 @@ describe("visitor can see all listed articles", () => {
       });
     });
     it("visitor can see article title", () => {
-      cy.get("[data-cy='article-1']").within(() => {
-        cy.get("[data-cy='title']").should("contain", "Hello World");
+      cy.get("[data-cy='article-8']").within(() => {
+        cy.get("[data-cy='title']").should("contain", "Stockholm ger Kry extra betalt för digitala besök");
       });
     });
 
     it("visitor can see article teaser", () => {
-      cy.get("[data-cy='article-2']").within(() => {
+      cy.get("[data-cy='article-9']").within(() => {
         cy.get("[data-cy='teaser']").should(
           "contain",
-          "Sun is always shining in Kista"
+          "Politikerna har försökt täppa till hålen – ändå är den kritiserade vårdappen en framgångssaga"
         );
       });
     });
