@@ -1,12 +1,14 @@
 import axios from "axios";
 
 const Articles = {
-  async index(category) {
-    let result = await axios.get(`/articles/`, {
-      params: {
-        category: category
-      }});
+  async index() {
+    let result = await axios.get("/articles");
     return result.data.articles;
+  },
+  
+  async category(categoryId) {
+    let result = await axios.get(`/articles/${categoryId}`);
+    return result.data.articles
   },
 
   async show(articleId) {
