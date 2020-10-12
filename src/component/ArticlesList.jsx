@@ -2,7 +2,6 @@ import ArticlesCard from "./ArticlesCard";
 import React, { useState, useEffect } from "react";
 import Articles from "../modules/articles";
 import { Grid, Container } from "semantic-ui-react";
-import NavigationBar from "../component/NavigationBar";
 import { useParams } from "react-router-dom";
 
 const ArticlesList = () => {
@@ -19,7 +18,6 @@ const ArticlesList = () => {
 
   return (
     <>
-      <NavigationBar />
       <Container id="container">
         <Grid>
           <Grid.Row columns={3}>
