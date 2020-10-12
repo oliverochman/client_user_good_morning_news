@@ -1,0 +1,9 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Latest news",
+      "teaser": "This is the latest thing that has ever happend"
+    }
+  ]
+}

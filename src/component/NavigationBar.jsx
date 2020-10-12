@@ -28,14 +28,14 @@ const NavigationBar = () => {
       <Header.Subheader data-cy="navigation-bar">
         <Menu id="menu">
           <Menu.Item
-            data-cy="news"
-            name="news"
-            active={activeItem === "news"}
+            data-cy="home"
+            name="home"
+            active={activeItem === "home"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/articles" }}
+            to={{ pathname: "/" }}
           >
-            News
+            Home
           </Menu.Item>
           <Menu.Item
             data-cy="sports"
@@ -43,7 +43,7 @@ const NavigationBar = () => {
             active={activeItem === "sports"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/articles/sports" }}
+            to={{ pathname: "/sports" }}
           >
             Sports
           </Menu.Item>
@@ -53,7 +53,7 @@ const NavigationBar = () => {
             active={activeItem === "business"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/articles/business" }}
+            to={{ pathname: "/business" }}
           >
             Business
           </Menu.Item>
@@ -63,7 +63,7 @@ const NavigationBar = () => {
             active={activeItem === "entertainment"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/articles/entertainment" }}
+            to={{ pathname: "/entertainment" }}
           >
             Entertainment
           </Menu.Item>
@@ -73,10 +73,21 @@ const NavigationBar = () => {
             active={activeItem === "weather"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/articles/weather" }}
+            to={{ pathname: "/weather" }}
           >
             Weather
           </Menu.Item>
+          <Menu.Item
+            data-cy="international-news"
+            name="international-news"
+            active={activeItem === "international-news"}
+            onClick={handleItemClick}
+            as={Link}
+            to={{ pathname: "/news" }}
+          >
+            International News
+          </Menu.Item>
+
         </Menu>
       </Header.Subheader>
     </Header>

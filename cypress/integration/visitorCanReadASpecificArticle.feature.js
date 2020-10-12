@@ -3,8 +3,8 @@ describe("Visitor can read a specific article", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/v1/articles/news",
-      response: "fixture:news_index.json",
+      url: "http://localhost:3000/api/v1/articles",
+      response: "fixture:articles_index.json",
     });
   });
 
@@ -33,13 +33,14 @@ describe("Visitor can read a specific article", () => {
         cy.get("[data-cy='content']").should("contain", "Jenny is cool");
       });
     });
+
     it("and do not see content from other articles", () => {
       cy.get("[data-cy='article-2']").should("not.exist");
       cy.get("[data-cy='article-3']").should("not.exist");
     });
   });
 
-  xcontext("unsuccessfully", () => {
+  context("unsuccessfully", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
@@ -52,6 +53,7 @@ describe("Visitor can read a specific article", () => {
       });
       cy.visit("/");
     });
+
     it("receives error message", () => {
       cy.get("[data-cy='article-1']").within(() => {
         cy.get("[data-cy='title']").click();
