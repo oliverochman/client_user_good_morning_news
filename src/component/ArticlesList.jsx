@@ -6,18 +6,27 @@ import { useParams } from "react-router-dom";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("")
   const { category } = useParams();
 
   useEffect(() => {
     const getArticles = async () => {
-      const response = await Articles.category(category);
-      setArticles(response);
+      const response = await Articles.index(category);
+      if (response.constructor === Array) {
+        setArticles(response);
+        setErrorMessage("")
+      } else {
+        setArticles([])
+        setErrorMessage(response)
+      }
     };
+
     getArticles();
   }, [category]);
 
   return (
     <>
+      <p data-cy="error-message">{errorMessage}</p>
       <Container id="container">
         <Grid>
           <Grid.Row columns={3}>
