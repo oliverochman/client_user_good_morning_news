@@ -1,3 +1,42 @@
-#container1 {
+@import url("https://fonts.googleapis.com/css2?family=Exo:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap");
+#container {
+  padding-top: 3em;
   background: linear-gradient(to bottom, #ffffff 0%, #d3d3d3 100%);
+}
+#good,
+#morning,
+#News {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #e6ecff;
+  font-family: "Exo", sans-serif;
+}
+#good {
+  background-color: #00134d;
+}
+#morning {
+  background-color: #001a66;
+}
+#News {
+  background-color: #002080;
+}
+#main-grid {
+  background-color: #002699;
+  height: 5em;
+}
+#slogan {
+  margin-top: 1em;
+  color: #e6ecff;
+  font-family: "Marcellus SC", serif;
+}
+#menu {
+  background-color: #b30000;
+}
+#sports,
+#news,
+#business,
+#entertainment,
+#weather {
+  background-color: white;
 }
