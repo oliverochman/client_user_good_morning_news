@@ -72,7 +72,7 @@ describe("visitor can see all listed articles", () => {
       });
       cy.visit("/");
       cy.get("[data-cy='navigation-bar']").within(() => {
-        cy.get("[data-cy='international']").click();
+        cy.get("[data-cy='news']").click();
       });
     });
     it("visitor should see error message", () => {

@@ -3,7 +3,7 @@ describe("Visitor can read a specific article", () => {
     cy.server();
     cy.route({
       method: "GET",
-      url: "http://localhost:3000/api/v1/articles/",
+      url: "http://localhost:3000/api/v1/articles",
       response: "fixture:articles_index.json",
     });
   });
