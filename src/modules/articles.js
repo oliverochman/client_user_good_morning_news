@@ -2,19 +2,19 @@ import axios from "axios";
 
 const Articles = {
   async index(category) {
-    let response
+    let response;
     try {
-      let result
+      let result;
       if (category) {
         result = await axios.get(`/articles/?category=${category}`);
       } else {
         result = await axios.get(`/articles`);
       }
       response = result.data.articles;
-    } catch(error) {
-      response = error.response.data.error_message
+    } catch (error) {
+      response = error.response.data.error_message;
     } finally {
-      return response 
+      return response;
     }
   },
 

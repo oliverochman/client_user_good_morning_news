@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Articles from "../modules/articles";
-import { Container } from "semantic-ui-react";
+import { Container, Button, Segment } from "semantic-ui-react";
 
 const SpecificArticle = () => {
   const [article, setArticle] = useState({});
@@ -30,7 +30,20 @@ const SpecificArticle = () => {
             <h1 data-cy="title">{article.title}</h1>
             <h3 data-cy="teaser">{article.teaser}</h3>
             <p data-cy="content">{article.content}</p>
+            <p>Hello</p>
           </div>
+
+          {article.premium && (
+            <Segment inverted id="menu" textAlign="center">
+              <h4 data-cy="premium-alert">
+                This is part of our premium content, to get full access become
+                premium user
+              </h4>
+              <Button color="black" data-cy="premium-button">
+                Become premium!
+              </Button>
+            </Segment>
+          )}
         </Container>
       )}
     </>
