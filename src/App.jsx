@@ -1,8 +1,8 @@
 import React from "react";
-import ArticlesList from "./component/ArticlesList";
+import ArticlesList from "./components/ArticlesList";
 import { Switch, Route } from "react-router-dom";
-import SpecificArticle from "./component/SpecificArticle";
-import NavigationBar from "./component/NavigationBar";
+import SpecificArticle from "./components/SpecificArticle";
+import NavigationBar from "./components/NavigationBar";
 
 const App = () => {
   return (
