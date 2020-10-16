@@ -4,6 +4,7 @@
       "id": 1,
       "title": "Hello World",
       "teaser": "Sun is always shining in Kista",
-      "content": "Jenny is cool"
+      "content": "Jenny is cool",
+      "premium": false
     }
 }
