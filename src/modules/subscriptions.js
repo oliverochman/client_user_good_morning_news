@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getAuthHeaders } from './auth'
+import  getAuthHeaders  from './auth'
 
 const Subscriptions = {
   async create(stripeToken) {

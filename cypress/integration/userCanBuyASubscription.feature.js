@@ -4,7 +4,7 @@ describe("User can buy a subscription", () => {
     cy.route({
       method: "POST",
       url: "http://localhost:3000/api/v1/subscriptions",
-      response: "fixture:subscriptions_create_success.json"
+      response: "fixture:subscription_success.json"
     });
   });
   it("successfully", () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Elements, injectStripe } from "react-stripe-elements";
+import { Elements } from "react-stripe-elements";
 import PaymentForm from "./PaymentForm";
 import Subscriptions from "../modules/subscriptions";
 import { useDispatch } from "react-redux";
@@ -11,7 +11,7 @@ const BecomeSubscriber = (props) => {
   const submitPayment = async (stripeToken) => {
     let paymentStatus = await Subscriptions.create(stripeToken);
 
-    if (paymentStatus.success) {
+    if (paymentStatus.success) {debugger
       dispatch({
         type: "USER_IS_SUBSCRIBER",
         payload: {

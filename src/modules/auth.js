@@ -22,4 +22,5 @@ const getAuthHeaders = () => {
   };
 };
 
-export default { auth, getAuthHeaders };
+export default auth;
+export { getAuthHeaders };
