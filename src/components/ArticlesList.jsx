@@ -2,12 +2,14 @@ import ArticlesCard from "./ArticlesCard";
 import React, { useState, useEffect } from "react";
 import Articles from "../modules/articles";
 import { Grid, Container } from "semantic-ui-react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState();
   const { category } = useParams();
+  let location = useLocation();
+  const [message, setMessage] = useState();
 
   useEffect(() => {
     const getArticles = async () => {
@@ -24,9 +26,17 @@ const ArticlesList = () => {
     getArticles();
   }, [category]);
 
+  useEffect(() => {
+    debugger;
+    if (location.state) {
+      setMessage(location.state.message);
+    }
+  }, [location]);
+
   return (
     <>
-      <p data-cy="error-message">{errorMessage}</p>
+      {message && <p data-cy="payment-success-message">{message}</p>}
+      {errorMessage && <p data-cy="error-message">{errorMessage}</p>}
       <Container id="container">
         <Grid>
           <Grid.Row columns={3}>

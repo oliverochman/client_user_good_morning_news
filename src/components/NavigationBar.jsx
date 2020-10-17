@@ -8,7 +8,6 @@ const NavigationBar = () => {
   const authenticated = useSelector((state) => state.authenticated);
   const currentUser = useSelector((state) => state.currentUser);
 
-
   const handleItemClick = (e, { name }) => {
     setActiveItem(name);
   };
@@ -92,20 +91,20 @@ const NavigationBar = () => {
           >
             International
           </Menu.Item>
-          {authenticated ? ( 
+          {authenticated ? (
             currentUser.role !== "subscriber" && (
-            <Menu.Item
-              position="right"
-              data-cy="become-subscriber"
-              name="become-subscriber"
-              active={activeItem === "become-subscriber"}
-              as={Link}
-              to={{ pathname: "/become-subscriber" }}
-              inverted
-            >
-              Become Subscriber
-            </Menu.Item>
-          )
+              <Menu.Item
+                position="right"
+                data-cy="become-subscriber"
+                name="become-subscriber"
+                active={activeItem === "become-subscriber"}
+                as={Link}
+                to={{ pathname: "/become-subscriber" }}
+                inverted
+              >
+                Become Subscriber
+              </Menu.Item>
+            )
           ) : (
             <Menu.Item
               position="right"

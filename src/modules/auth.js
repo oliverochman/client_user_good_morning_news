@@ -12,16 +12,15 @@ const auth = new JtockAuth({
   prefixUrl: "/api/v1",
 });
 
-const getAuthHeaders = () => {debugger
+const getAuthHeaders = () => {
+  debugger;
   let headers = sessionStorage.getItem("J-tockAuth-Storage");
   headers = JSON.parse(headers);
   headers = {
     ...headers,
     "Content-type": "application/json",
     Accept: "application/json",
-
   };
 };
 
-export { getAuthHeaders };
-export default auth;
+export { auth, getAuthHeaders };

@@ -8,16 +8,17 @@ import { useHistory } from "react-router-dom";
 const BecomeSubscriber = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const submitPayment = async (stripeToken) => {debugger
+  const submitPayment = async (stripeToken) => {
     let paymentStatus = await Subscriptions.create(stripeToken);
 
-    if (paymentStatus.success) {debugger
+    if (paymentStatus.success) {
       dispatch({
         type: "USER_IS_SUBSCRIBER",
         payload: {
           role: "subscriber",
         },
       });
+      debugger;
       history.push("/", { message: paymentStatus.message });
     } else {
     }

@@ -11,7 +11,6 @@ const PaymentForm = (props) => {
     e.preventDefault();
     let stripeResponse = await props.stripe.createToken();
     props.submitPayment(stripeResponse.token.id);
-
   };
 
   return (

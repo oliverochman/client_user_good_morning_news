@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, Container, Message } from "semantic-ui-react";
-import auth from "../modules/auth";
+import { auth } from "../modules/auth";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
