@@ -5,10 +5,10 @@ import Subscriptions from "../modules/subscriptions";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
-const BecomeSubscriber = (props) => {
+const BecomeSubscriber = () => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const submitPayment = async (stripeToken) => {
+  const submitPayment = async (stripeToken) => {debugger
     let paymentStatus = await Subscriptions.create(stripeToken);
 
     if (paymentStatus.success) {debugger

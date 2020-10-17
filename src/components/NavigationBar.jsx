@@ -100,7 +100,7 @@ const NavigationBar = () => {
               name="become-subscriber"
               active={activeItem === "become-subscriber"}
               as={Link}
-              to={{ pathname: "/login" }}
+              to={{ pathname: "/become-subscriber" }}
               inverted
             >
               Become Subscriber

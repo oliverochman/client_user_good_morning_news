@@ -10,10 +10,11 @@ const Subscriptions = {
       }, {
         headers: getAuthHeaders()
       })
+      debugger
       response = { success: true, message: result.data.message }
-    } catch (error) {
+    } catch (error) {debugger
       response = { success: false, message: error.response.data.message }
-    } finally {
+    } finally {debugger
       return response
     }
   }

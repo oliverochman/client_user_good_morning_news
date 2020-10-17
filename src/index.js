@@ -8,6 +8,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import { Provider } from "react-redux";
 import configureStore from "./state/store/configureStore";
+import { StripeProvider } from "react-stripe-elements";
 
 const store = configureStore();
 
@@ -22,11 +23,13 @@ if (process.env.NODE_ENV === "production") {
 axios.defaults.baseURL = apiUrl;
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>,
+  <StripeProvider apiKey="pk_test_21nBNjeqdyB1Mzm2VjDPQprF00kyEKYZSK">
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  </StripeProvider>,
   document.getElementById("root")
 );
 
