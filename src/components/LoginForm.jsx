@@ -1,16 +1,40 @@
-import React from "react";
-import { Button, Form, Container } from "semantic-ui-react";
-// import { login } from "../modules/auth";
-// import { useDispatch } from 'react-redux'
-// import { useHistory } from 'react-router-dom'
+import React, { useState } from "react";
+import { Button, Form, Container, Message } from "semantic-ui-react";
+import auth from "../modules/auth";
+import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const LoginForm = () => {
-  // const dispatch = useDispatch()
-  // const history = useHistory()
+  const [message, setmessage] = useState();
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  const login = async (event, dispatch, history) => {
+    event.preventDefault();
+    try {
+      const email = event.target.email.value;
+      const password = event.target.password.value;
+
+      const response = await auth.signIn(email, password);
+      dispatch({
+        type: "AUTHENTICATE",
+        payload: {
+          authenticated: response.success,
+          currentUser: response.data,
+        },
+      });
+
+      history.replace({ pathname: "/" });
+    } catch (error) {
+      setmessage(error.response.data.errors[0]);
+    }
+  };
+
   return (
     <Container>
-      <Form data-cy="login-form" 
-      // onSubmit={(event) => login(event, dispatch, history)} 
+      <Form
+        data-cy="login-form"
+        onSubmit={(event) => login(event, dispatch, history)}
       >
         <Form.Input
           icon="user"
@@ -35,6 +59,11 @@ const LoginForm = () => {
         />
         <Button data-cy="submit" id="Submit" content="Submit" primary />
       </Form>
+      {message && (
+        <Message negative data-cy="message">
+          <Message.Header>{message}</Message.Header>
+        </Message>
+      )}
     </Container>
   );
 };

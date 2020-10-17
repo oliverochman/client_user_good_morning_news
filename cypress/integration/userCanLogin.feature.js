@@ -17,7 +17,7 @@ describe("User can login and see 'become a subscriber' button", () => {
         url: "http://localhost:3000/api/v1/articles",
         response: "fixture:articles_index.json",
       });
-  
+
       cy.visit("/");
       cy.get('[data-cy="login-button"]').contains("Login").click();
     });
@@ -26,7 +26,7 @@ describe("User can login and see 'become a subscriber' button", () => {
       cy.get('[data-cy="login-form"]').within(() => {
         cy.get('[data-cy="email"]').type("registered@mail.com");
         cy.get('[data-cy="password"]').type("password");
-        cy.get('[data-cy="button"]').contains("Submit").click();
+        cy.get('[data-cy="submit"]').contains("Submit").click();
       });
       cy.get('[data-cy="become-subscriber"]')
         .contains("Become Subscriber")
@@ -34,7 +34,7 @@ describe("User can login and see 'become a subscriber' button", () => {
     });
   });
 
-  xcontext("Unsuccessfully with wrong credentials", () => {
+  context("Unsuccessfully with wrong credentials", () => {
     beforeEach(() => {
       cy.server();
       cy.route({
@@ -55,12 +55,13 @@ describe("User can login and see 'become a subscriber' button", () => {
         },
       });
       cy.visit("/");
+      cy.get('[data-cy="login-button"]').contains("Login").click();
     });
     it("invalid credentials", () => {
       cy.get('[data-cy="login-form"]').within(() => {
         cy.get('[data-cy="email"]').type("invalid@mail.com");
         cy.get('[data-cy="password"]').type("wrong_password");
-        cy.get('[data-cy="button"]').contains("Submit").click();
+        cy.get('[data-cy="submit"]').contains("Submit").click();
       });
       cy.get('[data-cy="become-subscriber"]').should("not.exist");
       cy.get('[data-cy="message"]').should(

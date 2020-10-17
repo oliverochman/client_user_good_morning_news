@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Header, Menu, Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NavigationBar = () => {
   const [activeItem, setActiveItem] = useState("news");
+  const authenticated = useSelector((state) => state.authenticated);
+
   const handleItemClick = (e, { name }) => {
     setActiveItem(name);
   };
@@ -87,16 +90,30 @@ const NavigationBar = () => {
           >
             International
           </Menu.Item>
-          <Menu.Item
-            data-cy="login-button"
-            name="login"
-            active={activeItem === "login"}
-            // onClick={handleItemClick}
-            as={Link}
-            to={{ pathname: "/login" }}
-          >
-            Login
-          </Menu.Item>
+          {authenticated ? (
+            <Menu.Item
+              position="right"
+              data-cy="become-subscriber"
+              name="become-subscriber"
+              active={activeItem === "become-subscriber"}
+              as={Link}
+              to={{ pathname: "/login" }}
+              inverted
+            >
+              Become Subscriber
+            </Menu.Item>
+          ) : (
+            <Menu.Item
+              position="right"
+              data-cy="login-button"
+              name="login"
+              active={activeItem === "login"}
+              as={Link}
+              to={{ pathname: "/login" }}
+            >
+              Login
+            </Menu.Item>
+          )}
         </Menu>
       </Header.Subheader>
     </Header>
