@@ -87,6 +87,16 @@ const NavigationBar = () => {
           >
             International
           </Menu.Item>
+          <Menu.Item
+            data-cy="login-button"
+            name="login"
+            active={activeItem === "login"}
+            // onClick={handleItemClick}
+            as={Link}
+            to={{ pathname: "/login" }}
+          >
+            Login
+          </Menu.Item>
         </Menu>
       </Header.Subheader>
     </Header>
