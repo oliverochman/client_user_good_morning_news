@@ -13,7 +13,6 @@ const auth = new JtockAuth({
 });
 
 const getAuthHeaders = () => {
-  debugger;
   let headers = sessionStorage.getItem("J-tockAuth-Storage");
   headers = JSON.parse(headers);
   headers = {

@@ -1,5 +1,4 @@
 const initialState = {
-  currentUser: {},
   authenticated: false,
 }
 

@@ -27,7 +27,6 @@ const ArticlesList = () => {
   }, [category]);
 
   useEffect(() => {
-    debugger;
     if (location.state) {
       setMessage(location.state.message);
     }

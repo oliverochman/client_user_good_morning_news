@@ -18,7 +18,6 @@ const BecomeSubscriber = () => {
           role: "subscriber",
         },
       });
-      debugger;
       history.push("/", { message: paymentStatus.message });
     } else {
     }
