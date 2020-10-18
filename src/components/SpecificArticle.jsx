@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const SpecificArticle = () => {
   const [article, setArticle] = useState({});
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState();
   const { id } = useParams();
   const role = useSelector((state) => state.currentUser.role);
 

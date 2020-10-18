@@ -6,7 +6,6 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { Message } from "semantic-ui-react";
 
-
 const BecomeSubscriber = () => {
   const dispatch = useDispatch();
   const history = useHistory();

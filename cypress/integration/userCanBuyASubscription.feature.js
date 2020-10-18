@@ -8,7 +8,7 @@ describe("User can buy a subscription", () => {
       cy.route({
         method: "POST",
         url: "http://localhost:3000/api/v1/subscriptions",
-        response: "fixture:subscription_success.json",
+        response: { message: "Payment successful. Thank you for subscribing!" },
       });
     });
 
@@ -47,7 +47,9 @@ describe("User can buy a subscription", () => {
 
       cy.get("button").contains("Subscribe Now!").click();
 
-      cy.get("[data-cy='failure-message']").contains("Payment failed, please try again");
+      cy.get("[data-cy='failure-message']").contains(
+        "Payment failed, please try again"
+      );
       cy.get('[data-cy="become-subscriber"]').should("exist");
     });
   });
