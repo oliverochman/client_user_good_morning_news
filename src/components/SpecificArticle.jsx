@@ -4,11 +4,11 @@ import Articles from "../modules/articles";
 import { Container, Button, Segment } from "semantic-ui-react";
 import { useSelector } from "react-redux";
 
-  const SpecificArticle = () => {
-    const [article, setArticle] = useState({});
-    const [message, setMessage] = useState("");
-    const { id } = useParams();
-    const role = useSelector(state => state.currentUser.role)
+const SpecificArticle = () => {
+  const [article, setArticle] = useState({});
+  const [message, setMessage] = useState("");
+  const { id } = useParams();
+  const role = useSelector((state) => state.currentUser.role);
 
   useEffect(() => {
     const getSingleArticle = async () => {
@@ -41,9 +41,15 @@ import { useSelector } from "react-redux";
                 This is part of our premium content, to get full access become
                 premium user
               </h4>
-              <Button color="black" data-cy="premium-button">
-                Become premium!
-              </Button>
+              {role === "registered" ? (
+                <Button color="black" data-cy="premium-button">
+                  Become premium!
+                </Button>
+              ) : (
+                <Button color="black" data-cy="premium-button">
+                  Register & Become premium!
+                </Button>
+              )}
             </Segment>
           )}
         </Container>

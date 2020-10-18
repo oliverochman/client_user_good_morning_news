@@ -37,7 +37,7 @@ describe("Premium article view for visitor/registered/subscriber", () => {
         "contain",
         "This is part of our premium content, to get full access become premium user"
       );
-      cy.get("[data-cy='premium-button']").should("contain", "Become premium!");
+      cy.get("[data-cy='premium-button']").should("contain", "Register & Become premium!");
     });
   });
 
