@@ -44,7 +44,6 @@ const ArticlesList = () => {
           <Message.Header>{errorMessage}</Message.Header>
         </Message>
       )}
-      {/* {errorMessage && <p data-cy="error-message">{errorMessage}</p>} */}
       <Container id="container">
         <Grid>
           <Grid.Row columns={3}>
