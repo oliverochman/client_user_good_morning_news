@@ -8,6 +8,7 @@ const NavigationBar = () => {
   const authenticated = useSelector((state) => state.authenticated);
   const currentUser = useSelector((state) => state.currentUser);
 
+
   const handleItemClick = (e, { name }) => {
     setActiveItem(name);
   };

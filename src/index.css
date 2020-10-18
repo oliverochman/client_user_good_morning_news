@@ -40,3 +40,10 @@
 #weather {
   background-color: white;
 }
+
+.centered {
+  max-width: 60%;
+  margin: auto
+  /* margin-left: 60px; */
+
+}
