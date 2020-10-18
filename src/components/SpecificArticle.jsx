@@ -32,7 +32,6 @@ const SpecificArticle = () => {
             <h1 data-cy="title">{article.title}</h1>
             <h3 data-cy="teaser">{article.teaser}</h3>
             <p data-cy="content">{article.content}</p>
-            <p>Hello</p>
           </div>
 
           {article.premium && role !== "subscriber" && (
