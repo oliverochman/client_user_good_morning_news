@@ -37,7 +37,10 @@ describe("Premium article view for visitor/registered/subscriber", () => {
         "contain",
         "This is part of our premium content, to get full access become premium user"
       );
-      cy.get("[data-cy='premium-button']").should("contain", "Register & Become premium!");
+      cy.get("[data-cy='premium-button']").should(
+        "contain",
+        "Register & Become premium!"
+      );
     });
   });
 
@@ -66,6 +69,14 @@ describe("Premium article view for visitor/registered/subscriber", () => {
         "This is part of our premium content, to get full access become premium user"
       );
       cy.get("[data-cy='premium-button']").should("contain", "Become premium!");
+    });
+
+    it("Registered user should see Become Subscriber form when clicking the button", () => {
+      cy.get("[data-cy='premium-button']").click();
+      cy.get('[data-cy="subscription-header"]').should(
+        "contain",
+        "Submit your subscription and enjoy full Good Morning Content!"
+      );
     });
   });
 

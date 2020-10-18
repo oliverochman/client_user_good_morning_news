@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Articles from "../modules/articles";
 import { Container, Button, Segment } from "semantic-ui-react";
 import { useSelector } from "react-redux";
@@ -41,15 +41,16 @@ const SpecificArticle = () => {
                 This is part of our premium content, to get full access become
                 premium user
               </h4>
-              {role === "registered" ? (
-                <Button color="black" data-cy="premium-button">
-                  Become premium!
-                </Button>
-              ) : (
-                <Button color="black" data-cy="premium-button">
-                  Register & Become premium!
-                </Button>
-              )}
+              <Button
+                color="black"
+                data-cy="premium-button"
+                as={Link}
+                to={role === "registered" ? "/become-subscriber" : "/login"}
+              >
+                {role === "registered"
+                  ? "Become premium!"
+                  : "Register & Become premium!"}
+              </Button>
             </Segment>
           )}
         </Container>

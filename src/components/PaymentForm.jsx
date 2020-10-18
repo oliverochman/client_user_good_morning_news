@@ -16,29 +16,31 @@ const PaymentForm = (props) => {
 
   return (
     <>
-      <Container >
-      <div class="centered">
-        <Segment  color='blue'>
-          <Header textAlign="center">
-            Submit your subscription and enjoy full Good Morning Content!
-          </Header>
-          <Form size="small" onSubmit={payWithStripe}>
-            <Form.Field required data-cy="card-number">
-              <label>Card Number</label>
-              <CardNumberElement />
-            </Form.Field>
-            <Form.Field required data-cy="card-expiry">
-              <label>Card Expiry</label>
-              <CardExpiryElement />
-            </Form.Field>
-            <Form.Field required data-cy="card-cvc">
-              <label>Card CVC</label>
-              <CardCVCElement />
-            </Form.Field>
+      <Container>
+        <div class="centered">
+          <Segment color="blue">
+            <Header data-cy="subscription-header" textAlign="center">
+              Submit your subscription and enjoy full Good Morning Content!
+            </Header>
+            <Form size="small" onSubmit={payWithStripe}>
+              <Form.Field required data-cy="card-number">
+                <label>Card Number</label>
+                <CardNumberElement />
+              </Form.Field>
+              <Form.Field required data-cy="card-expiry">
+                <label>Card Expiry</label>
+                <CardExpiryElement />
+              </Form.Field>
+              <Form.Field required data-cy="card-cvc">
+                <label>Card CVC</label>
+                <CardCVCElement />
+              </Form.Field>
 
-            <Button color="blue" type="submit">Subscribe Now!</Button>
-          </Form>
-        </Segment>
+              <Button color="blue" type="submit">
+                Subscribe Now!
+              </Button>
+            </Form>
+          </Segment>
         </div>
       </Container>
     </>
