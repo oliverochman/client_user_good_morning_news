@@ -12,7 +12,7 @@ const SpecificArticle = () => {
 
   useEffect(() => {
     const getSingleArticle = async () => {
-      const response = await Articles.show(id);
+      const response = await Articles.show(id, role);
       if (response.id) {
         setArticle(response);
       } else {

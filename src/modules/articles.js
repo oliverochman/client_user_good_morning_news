@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getAuthHeaders } from "./auth";
 
 const Articles = {
   async index(category) {
@@ -18,9 +19,16 @@ const Articles = {
     }
   },
 
-  async show(articleId) {
+  async show(articleId, role) {
     try {
-      let result = await axios.get(`/articles/${articleId}`);
+      let result;
+      if (role) {
+        result = await axios.get(`/articles/${articleId}`, {
+          headers: getAuthHeaders(),
+        });
+      } else {
+        result = await axios.get(`/articles/${articleId}`);
+      }
       return result.data.article;
     } catch (error) {
       return error.response.data.error;
