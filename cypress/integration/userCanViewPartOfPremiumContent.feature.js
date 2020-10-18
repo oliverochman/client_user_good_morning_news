@@ -11,11 +11,11 @@ describe("Premium article view for visitor/registered/subscriber", () => {
       url: "http://localhost:3000/api/v1/articles/1",
       response: "fixture:article_show_premium.json",
     });
+    cy.visit("/");
   });
 
   context("visitor", () => {
     beforeEach(() => {
-      cy.visit("/");
       cy.get("[data-cy='article-1']").within(() => {
         cy.get("[data-cy='title']").click();
       });
@@ -43,7 +43,6 @@ describe("Premium article view for visitor/registered/subscriber", () => {
 
   context("registered", () => {
     beforeEach(() => {
-      cy.visit("/");
       cy.login("registered");
       cy.get("[data-cy='article-1']").within(() => {
         cy.get("[data-cy='title']").click();
@@ -72,7 +71,6 @@ describe("Premium article view for visitor/registered/subscriber", () => {
 
   context("subscriber", () => {
     beforeEach(() => {
-      cy.visit("/");
       cy.login("subscriber");
       cy.get("[data-cy='article-1']").within(() => {
         cy.get("[data-cy='title']").click();

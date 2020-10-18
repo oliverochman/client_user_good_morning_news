@@ -2,11 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Articles from "../modules/articles";
 import { Container, Button, Segment } from "semantic-ui-react";
+import { useSelector } from "react-redux";
 
-const SpecificArticle = () => {
-  const [article, setArticle] = useState({});
-  const [message, setMessage] = useState("");
-  const { id } = useParams();
+  const SpecificArticle = () => {
+    const [article, setArticle] = useState({});
+    const [message, setMessage] = useState("");
+    const { id } = useParams();
+    const role = useSelector(state => state.currentUser.role)
 
   useEffect(() => {
     const getSingleArticle = async () => {
@@ -33,7 +35,7 @@ const SpecificArticle = () => {
             <p>Hello</p>
           </div>
 
-          {article.premium && (
+          {article.premium && role !== "subscriber" && (
             <Segment inverted id="menu" textAlign="center">
               <h4 data-cy="premium-alert">
                 This is part of our premium content, to get full access become
