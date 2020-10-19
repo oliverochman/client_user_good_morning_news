@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { Header, Menu, Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const NavigationBar = () => {
   const [activeItem, setActiveItem] = useState("news");
+  const authenticated = useSelector((state) => state.authenticated);
+  const currentUser = useSelector((state) => state.currentUser);
+
+
   const handleItemClick = (e, { name }) => {
     setActiveItem(name);
   };
@@ -43,7 +48,7 @@ const NavigationBar = () => {
             active={activeItem === "sports"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/sports" }}
+            to={{ pathname: "/category/sports" }}
           >
             Sports
           </Menu.Item>
@@ -53,7 +58,7 @@ const NavigationBar = () => {
             active={activeItem === "business"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/business" }}
+            to={{ pathname: "/category/business" }}
           >
             Business
           </Menu.Item>
@@ -63,7 +68,7 @@ const NavigationBar = () => {
             active={activeItem === "entertainment"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/entertainment" }}
+            to={{ pathname: "/category/entertainment" }}
           >
             Entertainment
           </Menu.Item>
@@ -73,7 +78,7 @@ const NavigationBar = () => {
             active={activeItem === "weather"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/weather" }}
+            to={{ pathname: "/category/weather" }}
           >
             Weather
           </Menu.Item>
@@ -83,10 +88,36 @@ const NavigationBar = () => {
             active={activeItem === "news"}
             onClick={handleItemClick}
             as={Link}
-            to={{ pathname: "/news" }}
+            to={{ pathname: "/category/news" }}
           >
             International
           </Menu.Item>
+          {authenticated ? (
+            currentUser.role !== "subscriber" && (
+              <Menu.Item
+                position="right"
+                data-cy="become-subscriber"
+                name="become-subscriber"
+                active={activeItem === "become-subscriber"}
+                as={Link}
+                to={{ pathname: "/become-subscriber" }}
+                inverted
+              >
+                Become Subscriber
+              </Menu.Item>
+            )
+          ) : (
+            <Menu.Item
+              position="right"
+              data-cy="login-button"
+              name="login"
+              active={activeItem === "login"}
+              as={Link}
+              to={{ pathname: "/login" }}
+            >
+              Login
+            </Menu.Item>
+          )}
         </Menu>
       </Header.Subheader>
     </Header>

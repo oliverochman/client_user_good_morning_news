@@ -4,8 +4,15 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "semantic-ui-css/semantic.min.css";
 import axios from "axios";
-import { BrowserRouter } from "react-router-dom";
-import "./index.css"
+import { BrowserRouter as Router } from "react-router-dom";
+import "./index.css";
+import { Provider } from "react-redux";
+import configureStore from "./state/store/configureStore";
+import { StripeProvider } from "react-stripe-elements";
+
+const store = configureStore();
+
+window.store = store;
 
 let apiUrl;
 if (process.env.NODE_ENV === "production") {
@@ -16,9 +23,13 @@ if (process.env.NODE_ENV === "production") {
 axios.defaults.baseURL = apiUrl;
 
 ReactDOM.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>,
+  <StripeProvider apiKey="pk_test_21nBNjeqdyB1Mzm2VjDPQprF00kyEKYZSK">
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  </StripeProvider>,
   document.getElementById("root")
 );
 
